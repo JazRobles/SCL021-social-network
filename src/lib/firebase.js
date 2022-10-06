@@ -24,19 +24,25 @@ let myUser;
 //import { db } from './config.js';
 //import { showPosts } from '../component/wall.js';
 
-export const createUser = (email, password) =>
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log(user);
-      sendEmailVerification(userCredential.user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
+//Crea Usuario
+export const createUser = (email, password) => {
+  return new Promise((resolve, reject) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in//Registrado
+        const user = userCredential.user;
+        console.log(user);
+        sendEmailVerification(userCredential.user);
+        resolve(userCredential)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage); 
+        reject(error)
+      });
+  });
+};
 
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
