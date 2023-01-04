@@ -1,7 +1,6 @@
 import { createPost, subscribe, logOut, updateLikes } from "../lib/firebase.js";
 
 export const wall = () => {
-  //let post = [];
 
   const muroPrinc = document.createElement("div");
   muroPrinc.className = "container-muroPrinc";
@@ -17,20 +16,6 @@ export const wall = () => {
   muroPrinc.appendChild(document.createElement("br"));
   muroPrinc.appendChild(document.createElement("br"));
 
-  // const barraNav = document.createElement("nav")
-  // //const ul = document.createElement("ul")
-  // const list = document.createElement("li")
-  // barraNav.textContent = "Adoptame!!";
-  // barraNav.textContent = "Datos Curiosos";
-  // barraNav.textContent = "Tips Generales";
-  // //barraNav.setAttribute("width", "200px");
-  // muroPrinc.appendChild(barraNav);
-  // //muroPrinc.appendChild(ul);
-  // muroPrinc.appendChild(list);
-
-  // const form = document.createElement("form");
-  // form.setAttribute("placeholder", "publica tu estado");
-  // muroPrinc.appendChild(form);
 
   const posteo = document.createElement("textarea");
   posteo.setAttribute("placeholder", "publica tu estado");
@@ -81,51 +66,10 @@ export const wall = () => {
     });
     postCard.appendChild(likeCat);
   });
-  // crear función
 
-  // const botonPublicar = document.createElement("button");
-  // //botonPublicar.setAttribute("type", "submit");
-  // botonPublicar.classList.add("btn-post");
-  // botonPublicar.innerHTML = "publicar";
-
-  // botonPublicar.addEventListener("click", function () {
-  //     //document.getElementsByClassName = "btnRegister";
-  //     document.getElementById("root").innerHTML = "";
-  //     createPost(textArea.value).then(() => {
-  //         window.location(textAreaDos)
-  //     });
-  // })
-
-  // botonPublicar.addEventListener("click", function () {
-
-  // }
-  // );
-  // console.log(botonPublicar);
-  // muroPrinc.appendChild(botonPublicar);
-
+  
   muroPrinc.appendChild(document.createElement("br"));
   muroPrinc.appendChild(document.createElement("br"));
-
-  // const textAreaDos = document.createElement("textarea");
-  // //textAreaDos.setAttribute("placeholder", "publica tu estado");
-  // textAreaDos.setAttribute("maxLength", "200");
-  // textAreaDos.setAttribute("required", "");
-  // textAreaDos.setAttribute("id", "text-description");
-  // muroPrinc.appendChild(textAreaDos);
 
   return muroPrinc;
 };
-
-//dar aqui el lugar donde estaran alojados los post, usar for each
-// export const showPosts = (posts) => {
-//     let boxPrinc = document.getElementById("muro");
-//     //boxPrinc.innerHTML = "";
-//     for (let post of posts) {
-//         const el = document.createElement("div");
-//         el.className = "post";
-//         el.textContent = post.content;
-
-//         console.log(post);
-//         boxPrinc.appendChild(el);
-//     }
-// };
