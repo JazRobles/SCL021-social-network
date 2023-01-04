@@ -1,12 +1,10 @@
 import { createPost, subscribe, logOut, updateLikes } from "../lib/firebase.js";
 
 export const wall = () => {
-
+  
+//se crean elementos y se almacenan  en variables
   const muroPrinc = document.createElement("div");
   muroPrinc.className = "container-muroPrinc";
-  //muroPrinc.setAttribute("id", "muro");
-  // logearse.textContent = "este es el mainWall!";
-  //console.log(logearse);
 
   const logoPrincipal = document.createElement("img");
   logoPrincipal.setAttribute("width", "200px");
@@ -22,7 +20,7 @@ export const wall = () => {
   posteo.setAttribute("maxLength", "200");
   posteo.setAttribute("required", "");
   posteo.setAttribute("id", "text-description");
-
+//se crea el boton de publicar y se le da el evento  clict para  publicar en post en el muro o div en este caso.
   const botonPublicar = document.createElement("button");
   botonPublicar.className = "btnpost";
   botonPublicar.textContent = "Publicar";
